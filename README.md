@@ -15,7 +15,7 @@ For this project, we would like you to build this api. Feel free to add your own
 
 The Fine Print
 --------------
-Please use whatever technology and techniques you feel are applicable to solve the problem. We suggest that you approach this exercise as if this code was part of a larger system. The end result should be representative of your abilities and style.
+Please use whatever technology and techniques you feel are applicable to solve the problem. We suggest that you approach this exercise as if this code was part of a larger system. Code should be production quality with the end result representative of your abilities and style.
 
 Please fork this repository. When you have completed your solution, please issue a pull request to notify us that you are ready.
 
