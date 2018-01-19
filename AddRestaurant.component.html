@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+   
+    <h3>Add Restaurant</h3>
+    <hr />
+    <form [formGroup]="restaurantForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+        <div class="form-group row">
+            <label class=" control-label col-md-12" for="Name">Name</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="name">
+            </div>
+            <span class="text-danger" *ngIf="restaurantForm.hasError('required', 'name') && formDir.submitted">
+                Name is required.
+            </span>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="City">City</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="city" data-val="true">
+            </div>
+            <span class="text-danger" *ngIf="restaurantForm.hasError('required', 'city') && formDir.submitted">
+                City is required
+            </span>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="Type">Type</label>
+            <div class="col-md-4">
+                <select class="form-control" data-val="true" formControlName="Type">
+                    <option value="">-- Select Restaurant Type --</option>
+                    <option value="American">American</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Mexican">Mexican</option>
+                    <option value="Chinees">Chinees</option>
+                </select>
+            </div>
+            <span class="text-danger" *ngIf="restaurantForm.hasError('required', 'type') && formDir.submitted">
+                Type is required
+            </span>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="Image">Image Path</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="Image">
+            </div>
+
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="Rating">Rating</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="Rating">
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-default">Save</button>
+            <button class="btn" (click)="cancel()">Cancel</button>
+        </div>
+    </form>
+</body>
+</html>
