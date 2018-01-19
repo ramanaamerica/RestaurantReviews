@@ -1,0 +1,22 @@
+﻿<h1>Restaurants </h1>{{ restaurant.city }}
+
+<p *ngIf="!restaurants"><em>Loading Restaurants...</em></p>
+<p>
+    <a [routerLink]="['/add-restaurant']">Create New</a>
+</p>
+
+<div class="row">
+    <div *ngFor="let restaurant of restaurants" class="col-md-4">
+
+        <img class="card-img-top" style="width:150px;height:150px;" src="{{ restaurant.image }}" alt="Card image cap">
+        <div class="card-block">
+            <h4 class="card-title">Name: {{ restaurant.name }}</h4>
+            <h4 class="card-title">City: {{ restaurant.city }}</h4>
+            <h4 class="card-title">Rating: {{ restaurant.rating }}</h4>
+            <h4 class="card-title">Reviews:  <a>Show</a>&nbsp;<a [routerLink]="['/restaurants/', restaurant.city]">Add Review</a> </h4>
+        </div>
+        <a  [routerLink]="['/restaurants/', restaurant.city]">Edit</a> |
+        <a style="display:none" [routerLink]="" (click)="delete(restaurant.id)">Delete</a>
+    </div>
+
+</div>
